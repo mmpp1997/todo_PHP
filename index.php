@@ -27,7 +27,7 @@
                 <p>already a user, <a class="reg" href="/">login</a>?</p>
             </div>
             <div class="grid-item four">
-                <input type="submit" value="Log in" class="btn green" />
+                <input type="submit" value="Register" class="btn green" />
             </div>
         </div>
     </form>
@@ -36,7 +36,33 @@
 </html>
 
 <?php
-    $username = $_POST["username"];
-    echo "<script>console.log('this is a Variable: " . $username. "' );</script>";
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        
+        //include database conection
+        include 'database.php';
+
+        //save form data
+        $username = $_POST["username"];  
+        $password = $_POST["password"];
+        $nickname = $_POST["nickname"];
+        $location = $_POST["location"];
+
+        //hash password
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        try {
+
+            $sql = "INSERT INTO `users` ( `username`, `password`, `nickname`, `location` ) 
+                VALUES ('$username', '$hash', '$nickname','$location')"; 
+        
+            $result = mysqli_query($conn, $sql);
+
+        } catch (Error) {
+            echo "Something went wrong";
+        }  
+
+        mysqli_close($conn);
+    }          
 
 ?>
