@@ -1,0 +1,9 @@
+body {
+    margin: 0px;
+    background-image: url("../img/background.png");
+}
+.grid-container{
+    display: grid;
+    height: 100vh;
+    grid-template-rows:50px auto 30px;
+}

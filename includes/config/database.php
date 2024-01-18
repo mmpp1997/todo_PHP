@@ -5,7 +5,7 @@
     $password = ""; 
     $database = "to_do_list"; 
     $conn=null;
-
+ 
     try {
         
         // Create a connection  
@@ -16,4 +16,3 @@
         echo "Cant connect <br>"; 
     }
    
-?>
