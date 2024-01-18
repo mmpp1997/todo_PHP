@@ -1,17 +1,41 @@
-.header{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    background-color: yellow;
+.header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: yellow;
+  border-bottom: 2px dashed gray;
 }
 
-.title{
-    margin-left: 15px;
-    font-size: 28px;
-    text-decoration: none;
-    color: grey;
+.title {
+  margin-left: 15px;
+  font-size: 28px;
+  text-decoration: none;
+  color: grey;
 }
 
-.title:hover{
-    color: white;
+.title:hover {
+  color: white;
+}
+
+.logout-form {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.add-form {
+    margin-left: auto;
+}
+
+.btn {
+  font-size: 20px;
+  color: whitesmoke;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+.logout{
+    background-color: red;
+}
+.add{
+    background-color: blue;
 }
