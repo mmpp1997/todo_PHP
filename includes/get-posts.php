@@ -16,7 +16,7 @@ if (mysqli_num_rows($result) > 0) {
         $day= date('l', strtotime($date));
         $title=$row["title"];
 
-        echo "<div class='todo'>";
+        echo "<div id='$postId' class='todo'  onclick='getID($postId)'>";
         echo "<form class='todo-form' action='includes/delete-post.php' method='post'>";
         echo "<p class='todo-day'>$day</p>";
         echo "<div class='todo-body'>";
@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 else{
-    echo "<div class='alert-div'><p class='alert'>click on add Todo to add something</p></div>";
+    echo "<div id='alert' class='alert-div'><p class='alert'>click on add Todo to add something</p></div>";
 }
 
 mysqli_close($conn);

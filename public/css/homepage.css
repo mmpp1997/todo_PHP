@@ -55,6 +55,9 @@ body * {
 }
 
 .todo-title {
+  width: 95%;
+  word-wrap: break-word;
+  text-align: center;
   font-size: 35px;
   padding: 0px 10px;
 }
@@ -67,6 +70,9 @@ body * {
   background-color: transparent;
   text-align: center; 
   margin: 12.5px 0px;
+}
+.add-text-area:focus{
+  outline: none;
 }
 
 

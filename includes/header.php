@@ -7,7 +7,7 @@
     <header class="header">
         <a class="title" href="homepage.php"><?php echo ucfirst($_SESSION["nickname"]); ?>'s To Do List</a>
         <div class="add-div">
-            <input id="toggleAdd" class="add btn" type="button" value="Add ToDo">
+            <input onclick='toggle()' id="toggleAdd" class="add btn" type="button" value="Add ToDo">
         </div>
         <form class="logout-form" action="includes/logout.php" method="post">
             <input class="logout btn" type="submit" value="Log out">
