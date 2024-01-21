@@ -5,12 +5,12 @@
 </head>
 <body>
     <header class="header">
-        <a class="title" href="homepage.php"><?php echo $_SESSION["nickname"]; ?>'s To Do List</a>
-        <form class="add-form" action="">
-            <input class="add btn" type="button" value="add ToDo">
-        </form>
-        <form class="logout-form" action="">
-            <input class="logout btn" type="button" value="Log out">
+        <a class="title" href="homepage.php"><?php echo ucfirst($_SESSION["nickname"]); ?>'s To Do List</a>
+        <div class="add-div">
+            <input id="toggleAdd" class="add btn" type="button" value="Add ToDo">
+        </div>
+        <form class="logout-form" action="includes/logout.php" method="post">
+            <input class="logout btn" type="submit" value="Log out">
         </form>
     </header>  
 </body>

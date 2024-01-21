@@ -1,63 +1,102 @@
 body {
-    margin: 0px;
-    /* background-image: url("../img/background.png"); */
+  margin: 0px;
+  background-color: #3d48d9;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235f82ea'/%3E%3Cstop offset='1' stop-color='%235f82ea' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235f94d8'/%3E%3Cstop offset='1' stop-color='%235f94d8' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2381c1e9'/%3E%3Cstop offset='1' stop-color='%2381c1e9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233D48D9'/%3E%3Cstop offset='1' stop-color='%233D48D9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2386B6F6'/%3E%3Cstop offset='1' stop-color='%2386B6F6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%237FC7D9'/%3E%3Cstop offset='1' stop-color='%237FC7D9' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
 }
+
 body * {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
-.grid-container{
-    display: grid;
-    height: 100vh;
-    grid-template-rows:50px auto 30px;
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 50px auto 30px;
 }
 
 /* todo styling */
-.todo{
-    margin: 15px;
-    display: inline-block;
-    border: 2px solid rgb(212, 212, 104);
+.todo {
+  margin: 25px;
+  display: inline-block;
 }
 
-.todo-form{
-    width: 200px;
+.todo-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-day {
+  width: 100%;
+  margin: 0px;
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 20px;
+  color: whitesmoke;
+  font-weight: 600;
+  background-color: #3d48d9;
+}
+.add-day{
+  background-color: green;
+}
+
+.todo-body{
+    width: 95%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/lined-paper.png");
 }
 
-.todo-day{
-    width: 100%;
-    margin: 0px;
-    padding: 10px 0px;
-    text-align: center;
-    font-size: 20px;
-    background-color: yellow;
+.todo-title {
+  font-size: 35px;
+  padding: 0px 10px;
 }
 
-.todo-title{
-    font-size: 25px;
-    padding: 0px 10px;
+.add-text-area{
+  resize: none;
+  width: 100%;
+  font-size: 35px;
+  border: none;
+  background-color: transparent;
+  text-align: center; 
+  margin: 12.5px 0px;
 }
 
-.delete-todo{
-    border: none;
+
+.todo-btn{
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px 15px;
+  color: grey;
+  border: 1px solid grey;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+.todo-btn:hover{
     background-color: red;
-    font-size: 25px;
-    border-radius: 15px;
-    padding: 5px 15px;
     color: whitesmoke;
-    margin-bottom: 10px;
-
+    border: 1px solid transparent;
+}
+.add-post:hover{
+  background-color: green;
 }
 
 /* empty page */
-.alert-div{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.alert-div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.alert{
-    font-size: 35px;
+.alert {
+  font-size: 35px;
+  color: whitesmoke;
+  font-weight: 500;
 }

@@ -2,15 +2,14 @@
   display: flex;
   align-items: center;
   height: 100%;
-  background-color: yellow;
-  border-bottom: 2px dashed gray;
 }
 
 .title {
   margin-left: 15px;
   font-size: 28px;
   text-decoration: none;
-  color: grey;
+  color: whitesmoke;
+  font-weight: 600;
 }
 
 .title:hover {
@@ -22,20 +21,23 @@
   margin-right: 10px;
 }
 
-.add-form {
-    margin-left: auto;
+.add-div {
+  margin-left: auto;
 }
-
-.btn {
-  font-size: 20px;
-  color: whitesmoke;
+.btn{
+  background-color: transparent;
   border: none;
   border-radius: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: whitesmoke;
   padding: 10px 15px;
 }
-.logout{
-    background-color: red;
+
+.logout:hover {
+  background-color: red;
 }
-.add{
-    background-color: blue;
+
+.add:hover{
+  background-color: green;
 }

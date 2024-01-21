@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +16,22 @@
         </div>
         <div class="todo-page">
             <?php include_once("includes/get-posts.php"); ?>
+            <div id="addDiv" class="todo" style="display: inline-block;">
+                <form class="todo-form" action="includes/delete-post.php" method="post">
+                <p class="add-day todo-day">Add ToDo</p>
+                    <div class="todo-body">
+                        <textarea class="add-text-area" name="toDoText" placeholder="add a ToDo"></textarea>
+                        <input class="add-post todo-btn" type="submit" value="Add Todo"/>
+                    </div>
+                </form>
+            </div>
         </div>
         <div>
             <?php include_once("includes/footer.php"); ?>
         </div>
     </div>
+
+    <script src="public/js/addToggle.js"></script>
+
 </body>
 </html>

@@ -19,9 +19,11 @@ if (mysqli_num_rows($result) > 0) {
         echo "<div class='todo'>";
         echo "<form class='todo-form' action='includes/delete-post.php' method='post'>";
         echo "<p class='todo-day'>$day</p>";
+        echo "<div class='todo-body'>";
         echo "<p class='todo-title'>$title</p>";
         echo "<input type='hidden' name='postId' value='$postId'/>"; 
-        echo "<input class='delete-todo' type='submit' value='Delete'/>";
+        echo "<input class='todo-btn' type='submit' value='Delete'/>";
+        echo "</div>";
         echo "</form>";
         echo "</div>";
     }
