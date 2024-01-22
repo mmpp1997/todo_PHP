@@ -3,7 +3,7 @@
         $nickname=$_SESSION["nickname"];
     }
     else{
-        header("Location: ../index.php");
+        header("Location: /");
     }
 
 ?>
