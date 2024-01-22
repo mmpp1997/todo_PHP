@@ -32,6 +32,5 @@ session_start();
     </div>
 
     <script src="public/js/addToggle.js"></script>
-    <script src="public/js/toDosClick.js"></script>
 </body>
 </html>

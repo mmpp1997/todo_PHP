@@ -55,7 +55,6 @@ body * {
 }
 
 .todo-title {
-  width: 95%;
   word-wrap: break-word;
   text-align: center;
   font-size: 35px;
@@ -75,7 +74,11 @@ body * {
   outline: none;
 }
 
-
+.todo-btns{
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+}
 .todo-btn{
   font-size: 25px;
   font-weight: 600;
@@ -90,7 +93,7 @@ body * {
     color: whitesmoke;
     border: 1px solid transparent;
 }
-.add-post:hover{
+.add-post:hover,.check:hover{
   background-color: green;
 }
 

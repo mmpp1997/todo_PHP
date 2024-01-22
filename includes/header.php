@@ -1,3 +1,12 @@
+<?php
+    if($_SESSION["nickname"]){
+        $nickname=$_SESSION["nickname"];
+    }
+    else{
+        header("Location: ../index.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +14,7 @@
 </head>
 <body>
     <header class="header">
-        <a class="title" href="homepage.php"><?php echo ucfirst($_SESSION["nickname"]); ?>'s To Do List</a>
+        <a class="title" href="homepage.php"><?php echo ucfirst($nickname); ?>'s To Do List</a>
         <div class="add-div">
             <input onclick='toggle()' id="toggleAdd" class="add btn" type="button" value="Add ToDo">
         </div>
