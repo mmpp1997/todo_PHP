@@ -1,7 +1,7 @@
 <?php
 
 
-include_once("config/database.php");
+include_once("includes/config/database.php");
 
 $sql = "SELECT * FROM `todos` WHERE userId ='12' ORDER BY day DESC;";
 $posts = mysqli_query($conn, $sql);
@@ -25,17 +25,36 @@ if (mysqli_num_rows($posts) > 0) {
         for ($j=0; $j <count($response_posts) ; $j++) {
             if($dates[$i]==$response_posts[$j]["day"]){
                 $title=ucfirst($response_posts[$j]["title"]);
-                echo "<div class='to-do'>";
-                echo "<div><p class='to-do-title'>$title</p></div>";
+                $postId=$response_posts[$j]["id"];
+                $checked=$response_posts[$j]["checked"];
+                if($checked=="1"){
+                    $opacity=0.5;
+                    $btn_value="Uncheck";
+                    $text_decoration="line-through";
+                }
+                elseif($checked=="0"){
+                    $opacity=1;
+                    $text_decoration="none";
+                    $btn_value="Check";
+                }
+                echo "<div class='to-do' style='opacity: $opacity'>";
+                echo "<div><p class='to-do-title' style='text-decoration: $text_decoration' >$title</p></div>";
                 echo "<form class='delete-form' action='includes/delete-todo.php' method='post'>";
-                echo "<input class='todo-btn' name='btn' type='submit' value='Delete'/>";
+                echo "<input name='postId' type='hidden' value='$postId'/>";
+                echo "<input class='todo-btn' name='btn' type='submit' value='X'/>";
                 echo "</form>";
                 echo "<form class='check-form' action='includes/check-todo.php' method='post'>";
-                echo "<input class='check todo-btn' name='btn' type='submit' value='Check'/>";
+                echo "<input name='postId' type='hidden' value='$postId'/>";
+                echo "<input name='checked' type='hidden' value='$checked'/>";
+                echo "<input class='check todo-btn' name='btn' type='submit' value='✓'/>";
                 echo "</form>";
                 echo "</div>";
             }
         }
+        echo "<form class='to-do-add' action='includes/add-post.php' method='post'>";
+        echo "<input class='to-do-add-text' type='text' name='toDoText'/>";
+        echo "<input class='add-in todo-btn' name='btn' type='submit' value='Add'/>";
+        echo "</form>";
         echo "</div>"; 
     }
 } else {
