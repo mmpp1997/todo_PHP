@@ -17,9 +17,9 @@ session_start();
         </div>
         <div class="todo-page">
             <?php include_once("includes/get-posts.php"); ?>
-            <div id="addDiv" class="todo" style="display: none;">
+            <div id="addDiv" class="to-do-div" style="display: none;">
                 <form class="todo-form" action="includes/add-post.php" method="post">
-                <p class="add-day todo-day">Add ToDo</p>
+                <p class="to-do-day">Add ToDo</p>
                     <div class="todo-body">
                         <textarea class="add-text-area" name="toDoText" placeholder="Add a ToDo"></textarea>
                         <input class="add-post todo-btn" type="submit" value="Add Todo"/>
