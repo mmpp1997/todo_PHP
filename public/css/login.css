@@ -82,4 +82,11 @@ a.reg-link:hover, .btn:hover {
     color: var(--hover);
 }
 
+.error{
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  color: red;
+}
+
 

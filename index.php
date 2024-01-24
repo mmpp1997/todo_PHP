@@ -1,10 +1,15 @@
 <?php
 session_start();
+
 if(isset($_SESSION["user_id"])){
     header("Location: homepage.php");
     exit;
 }
+
+$error = isset($_GET['error']) ? $_GET['error'] : '';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +28,9 @@ if(isset($_SESSION["user_id"])){
             </div>
             <div class="login-part">
                 <input class="input" name="password" type="password" title="Password" placeholder="Enter your password" required />
+            </div>
+            <div class="login-part">
+                <p class="error"><?php echo  $error;?></p>
             </div>
             <div class="login-part">
                 <p class="reg-link">Not a user, <a class="reg-link" href="./reg.php">register</a>?</p>

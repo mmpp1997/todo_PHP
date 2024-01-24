@@ -16,16 +16,15 @@ session_start();
             <?php include_once("includes/header.php"); ?>
         </div>
         <div class="todo-page">
-            <?php include_once("includes/get-posts.php"); ?>
-            <div id="addDiv" class="to-do-div" style="display: none;">
-                <form class="todo-form" action="includes/add-post.php" method="post">
-                <p class="to-do-day">Add ToDo</p>
-                    <div class="todo-body">
-                        <textarea class="add-text-area" name="toDoText" placeholder="Add a ToDo"></textarea>
-                        <input class="add-post todo-btn" type="submit" value="Add Todo"/>
-                    </div>
-                </form>
-            </div>
+        <?php include_once("includes/get-posts.php"); ?>
+        <div id="addDiv" class="to-do-div" style="display: none;">
+            <p class='to-do-day'>Add to a date</p>
+            <form class='to-do-add' action='includes/add-post.php' method='post'>
+                <input class='to-do-date' name='add_date' type='date' required/>
+                <input class='to-do-add-text' type='text' name='toDoText' required/>
+                <input class='add-in todo-btn' name='btn' type='submit' value='Add'/>
+            </form>
+        </div>
         </div>
         <div>
             <?php include_once("includes/footer.php"); ?>

@@ -3,7 +3,7 @@ function toggle() {
     addDiv.style.display = (addDiv.style.display === 'none') ? 'inline-block' : 'none';
 
     var btn = document.getElementById('toggleAdd');
-    btn.value = (btn.value == 'Cancel Add') ? 'Add ToDo' : 'Cancel Add';
+    btn.value = (btn.value == 'Cancel Add') ? 'Add New Day' : 'Cancel Add';
 
     var alert = document.getElementById('alert');
     if (alert) {

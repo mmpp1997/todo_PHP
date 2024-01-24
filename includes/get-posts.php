@@ -52,7 +52,9 @@ if (mysqli_num_rows($posts) > 0) {
             }
         }
         echo "<form class='to-do-add' action='includes/add-post.php' method='post'>";
-        echo "<input class='to-do-add-text' type='text' name='toDoText'/>";
+        $add_date=$dates[$i];
+        echo "<input name='add_date' type='hidden' value='$add_date'/>";
+        echo "<input class='to-do-add-text' type='text' name='toDoText' required />";
         echo "<input class='add-in todo-btn' name='btn' type='submit' value='Add'/>";
         echo "</form>";
         echo "</div>"; 
