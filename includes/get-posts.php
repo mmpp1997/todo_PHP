@@ -1,9 +1,10 @@
 <?php
-
-
+$current_user=$_SESSION["user_id"];
+$currentDate = date("Y-m-d");
+$set_border="";
 include_once("includes/config/database.php");
 
-$sql = "SELECT * FROM `todos` WHERE userId ='12' ORDER BY day DESC;";
+$sql = "SELECT * FROM `todos` WHERE userId ='$current_user' ORDER BY day DESC;";
 $posts = mysqli_query($conn, $sql);
 
 $dates=array();
@@ -19,7 +20,12 @@ if (mysqli_num_rows($posts) > 0) {
         }
     }
     for ($i=0; $i <count($dates) ; $i++) {
-        echo "<div class='to-do-div'>"; 
+        if($currentDate==$dates[$i]){
+            $set_border="5px solid #3d48d9";
+        }else{
+            $set_border="";
+        }
+        echo "<div class='to-do-div' style='border: $set_border; border-top: none'>"; 
         $day=date('l',strtotime($dates[$i])). " " . date("j.n", strtotime($dates[$i]));
         echo "<p class='to-do-day'>$day</p>";
         for ($j=0; $j <count($response_posts) ; $j++) {
@@ -27,15 +33,16 @@ if (mysqli_num_rows($posts) > 0) {
                 $title=ucfirst($response_posts[$j]["title"]);
                 $postId=$response_posts[$j]["id"];
                 $checked=$response_posts[$j]["checked"];
+        
                 if($checked=="1"){
                     $opacity=0.5;
-                    $btn_value="Uncheck";
+                    $btn_value="↻";
                     $text_decoration="line-through";
                 }
                 elseif($checked=="0"){
                     $opacity=1;
                     $text_decoration="none";
-                    $btn_value="Check";
+                    $btn_value="✓";
                 }
                 echo "<div class='to-do' style='opacity: $opacity'>";
                 echo "<div><p class='to-do-title' style='text-decoration: $text_decoration' >$title</p></div>";
@@ -46,7 +53,7 @@ if (mysqli_num_rows($posts) > 0) {
                 echo "<form class='check-form' action='includes/check-todo.php' method='post'>";
                 echo "<input name='postId' type='hidden' value='$postId'/>";
                 echo "<input name='checked' type='hidden' value='$checked'/>";
-                echo "<input class='check todo-btn' name='btn' type='submit' value='✓'/>";
+                echo "<input class='check todo-btn' name='btn' type='submit' value='$btn_value' />";
                 echo "</form>";
                 echo "</div>";
             }

@@ -25,12 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: /");
             exit();
 
-        } catch (mysqli_sql_exception) {
-            header("Location: ../reg.php?error=input error");
+        } catch (mysqli_sql_exception $my_error) {
+            if ($my_error->getCode() == 1062) {
+        
+                $errorMessage = $my_error->getMessage();
+
+                preg_match("/Duplicate entry '(.*?)' for key/", $errorMessage, $matches);
+                $duplicateField = isset($matches[1]) ? $matches[1] : 'unknown field';
+                
+                $to_show="$duplicateField already exists";
+                
+            } else {
+                $to_show="Error: " . $my_error->getMessage();
+            }
+
+            header("Location: ../reg.php?error=$to_show");
             exit();
         }
     } else {
-        header("Location: ../reg.php?error=incorrect email");
+        header("Location: ../reg.php?error=invalid email");
         exit();
     }
 }

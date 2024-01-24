@@ -16,8 +16,7 @@ session_start();
             <?php include_once("includes/header.php"); ?>
         </div>
         <div class="todo-page">
-        <?php include_once("includes/get-posts.php"); ?>
-        <div id="addDiv" class="to-do-div" style="display: none;">
+        <div id="addDiv" class="new to-do-div" style="display: none;">
             <p class='to-do-day'>Add to a date</p>
             <form class='to-do-add' action='includes/add-post.php' method='post'>
                 <input class='to-do-date' name='add_date' type='date' required/>
@@ -25,6 +24,7 @@ session_start();
                 <input class='add-in todo-btn' name='btn' type='submit' value='Add'/>
             </form>
         </div>
+        <?php include_once("includes/get-posts.php"); ?>
         </div>
         <div>
             <?php include_once("includes/footer.php"); ?>

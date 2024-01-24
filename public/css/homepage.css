@@ -18,8 +18,9 @@ body * {
 
 /* todo styling */
 .todo-page{
+  margin: 0px 7%;
   display: flex;
-  align-items: flex-start;
+  align-items:flex-start;
   flex-wrap: wrap;
 }
 
@@ -46,6 +47,7 @@ body * {
 /* empty page */
 .alert-div {
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,4 +151,7 @@ body * {
 
 .add-in:hover{
   background-color: green;
+}
+.new{
+  border: 5px solid yellow;
 }

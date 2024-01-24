@@ -1,3 +1,6 @@
+<?php
+$error = isset($_GET['error']) ? $_GET['error'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +25,9 @@
             </div>
             <div class="login-part">
                 <input class="input" name="location" type="text" title="Enter your hometown" placeholder="Enter your hometown" required />
+            </div>
+            <div class="login-part">
+                <p class="error"><?php echo  $error;?></p>
             </div>
             <div class="login-part">
                 <p class="reg-link">already a user, <a class="reg-link" href="/">login</a>?</p>
